@@ -1,0 +1,28 @@
+{
+  "name": "trouble",
+  "version": "1.0.0",
+  "description": "Four-minds debug protocol for stuck incidents: Data, Sherlock Holmes, Linus Torvalds, and Brian Cox, with Bayesian ranking and a unanimous agreement gate.",
+  "author": {
+    "name": "coldcanuk",
+    "url": "https://github.com/coldcanuk"
+  },
+  "homepage": "https://github.com/coldcanuk/trouble",
+  "repository": "https://github.com/coldcanuk/trouble",
+  "license": "MIT",
+  "keywords": [
+    "trouble",
+    "debug",
+    "incident",
+    "bayesian",
+    "four-minds"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "trouble",
+    "shortDescription": "Four-minds debug protocol (/trouble)",
+    "longDescription": "Installs the /trouble skill: four personalities, Bayesian ranking of hypotheses, unanimous agreement before a fix, and a machine-parseable TROUBLE_VERDICT block.",
+    "developerName": "coldcanuk",
+    "category": "Productivity",
+    "websiteURL": "https://github.com/coldcanuk/trouble"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "plugins": {
+    "trouble": {
+      "components": {
+        "skills": [
+          {
+            "name": "trouble",
+            "description": "Four-minds debug protocol. Use when the user types /trouble, or is stuck on an incident after unsuccessful attempts."
+          }
+        ]
+      }
+    }
+  }
+}

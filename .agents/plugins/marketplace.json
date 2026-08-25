@@ -1,0 +1,20 @@
+{
+  "name": "trouble",
+  "interface": {
+    "displayName": "trouble"
+  },
+  "plugins": [
+    {
+      "name": "trouble",
+      "source": {
+        "source": "local",
+        "path": "./plugins/trouble"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

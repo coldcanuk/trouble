@@ -1,0 +1,29 @@
+{
+  "name": "trouble",
+  "owner": {
+    "name": "coldcanuk",
+    "email": "coldcanuk@users.noreply.github.com"
+  },
+  "metadata": {
+    "description": "Marketplace plugin for the /trouble four-minds debug protocol.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "trouble",
+      "description": "Debug stuck incidents with Data, Sherlock Holmes, Linus Torvalds, and Brian Cox: Bayesian ranking, unanimous agreement gate, structured verdict.",
+      "version": "1.0.0",
+      "source": "./plugins/trouble",
+      "homepage": "https://github.com/coldcanuk/trouble",
+      "license": "MIT",
+      "keywords": [
+        "trouble",
+        "debug",
+        "four-minds",
+        "bayesian"
+      ],
+      "category": "development",
+      "skills": "skills/"
+    }
+  ]
+}
