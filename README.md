@@ -1,5 +1,9 @@
 # /trouble — four-minds debug protocol for stuck incidents
 
+<p align="center">
+  <img src="trouble-skill.jpg" alt="The four minds of /trouble: Data, Sherlock Holmes, Linus Torvalds, and Brian Cox around a holographic debug console" width="720">
+</p>
+
 **Stop guessing. Make the agent argue until the evidence wins.**
 
 `/trouble` is an open-source **AI agent skill** and **marketplace plugin** for
