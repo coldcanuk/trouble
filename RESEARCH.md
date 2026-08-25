@@ -19,7 +19,7 @@ skill-filesystem README, and the public example `7etsuo/write-legible-c`.
 │   ├── .claude-plugin/plugin.json      # Claude Code plugin identity (required)
 │   ├── .codex-plugin/plugin.json       # Codex required plugin manifest
 │   └── skills/trouble/SKILL.md         # single source of protocol text
-├── LICENSE                             # MIT
+├── LICENSE                             # GPLv3
 └── README.md                           # host install recipes
 ```
 
