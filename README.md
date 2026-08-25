@@ -126,6 +126,7 @@ phases in `SKILL.md`.
 ```
 plugins/trouble/
   plugin.json
+  .claude-plugin/plugin.json
   .codex-plugin/plugin.json
   skills/trouble/
     SKILL.md
