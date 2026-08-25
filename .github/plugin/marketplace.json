@@ -5,22 +5,27 @@
     "email": "coldcanuk@users.noreply.github.com"
   },
   "metadata": {
-    "description": "Marketplace plugin for the /trouble four-minds debug protocol.",
+    "description": "Four-minds incident debugger for AI coding agents: Bayesian ranking, unanimous agreement before any patch, machine-parseable TROUBLE_VERDICT. Install on Grok, Claude Code, Copilot CLI, Codex, and DeepSeek.",
     "version": "1.0.0"
   },
   "plugins": [
     {
       "name": "trouble",
-      "description": "Debug stuck incidents with Data, Sherlock Holmes, Linus Torvalds, and Brian Cox: Bayesian ranking, unanimous agreement gate, structured verdict.",
+      "description": "Stop looping on a bug you cannot close. /trouble is a four-minds debug protocol — Data, Sherlock Holmes, Linus Torvalds, and Brian Cox — that ranks hypotheses with Bayesian math and refuses a fix until they unanimously agree.",
       "version": "1.0.0",
       "source": "./plugins/trouble",
       "homepage": "https://github.com/coldcanuk/trouble",
-      "license": "MIT",
+      "license": "GPL-3.0-or-later",
       "keywords": [
-        "trouble",
-        "debug",
+        "troubleshooting",
+        "debugging",
+        "incident-response",
+        "bayesian",
         "four-minds",
-        "bayesian"
+        "claude-code",
+        "grok",
+        "copilot",
+        "agent-skills"
       ],
       "category": "development",
       "skills": "skills/"

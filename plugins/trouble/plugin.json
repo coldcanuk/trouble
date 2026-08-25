@@ -1,20 +1,28 @@
 {
   "name": "trouble",
   "version": "1.0.0",
-  "description": "Four-minds debug protocol for stuck incidents: Data, Sherlock Holmes, Linus Torvalds, and Brian Cox, with Bayesian ranking and a unanimous agreement gate.",
+  "description": "Stop looping on a bug you cannot close. /trouble is a four-minds debug protocol — Data, Sherlock Holmes, Linus Torvalds, and Brian Cox — that ranks hypotheses with Bayesian math and refuses a fix until they unanimously agree.",
   "author": {
     "name": "coldcanuk"
   },
   "homepage": "https://github.com/coldcanuk/trouble",
   "repository": "https://github.com/coldcanuk/trouble",
   "keywords": [
-    "trouble",
-    "debug",
-    "incident",
+    "troubleshooting",
+    "debugging",
+    "incident-response",
+    "root-cause-analysis",
     "bayesian",
     "four-minds",
-    "agents"
+    "sherlock-holmes",
+    "linus-torvalds",
+    "claude-code",
+    "grok",
+    "copilot",
+    "codex",
+    "deepseek",
+    "agent-skills"
   ],
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "skills": "skills/"
 }
