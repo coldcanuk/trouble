@@ -8,19 +8,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Decode JPEG and commit
+      - name: Fetch JPEG and commit
         run: |
           set -euo pipefail
+          curl -sSL -o trouble-skill.jpg "https://files.catbox.moe/y1ymbq.jpg"
           python3 - << 'PY'
-          import base64
           from pathlib import Path
-          parts = sorted(Path('assets/hero').glob('part-*.b64'))
-          assert parts, 'no parts'
-          data = ''.join(p.read_text().strip() for p in parts)
-          raw = base64.b64decode(data)
+          import hashlib
+          raw = Path('trouble-skill.jpg').read_bytes()
           assert raw[:3] == b'\xff\xd8\xff', raw[:8]
-          Path('trouble-skill.jpg').write_bytes(raw)
-          print('wrote', len(raw), 'bytes from', len(parts), 'parts')
+          h = hashlib.sha256(raw).hexdigest()
+          assert h == '9d20618f2f38a1a8ff5b6c7daa22eda68c8d02e5fc71d08bcbb19bfa461f6efb', h
+          print('ok', len(raw), h)
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
