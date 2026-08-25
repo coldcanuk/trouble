@@ -1,0 +1,33 @@
+name: materialize-hero
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode JPEG and commit
+        run: |
+          set -euo pipefail
+          python3 - << 'PY'
+          import base64
+          from pathlib import Path
+          parts = sorted(Path('assets/hero').glob('part-*.b64'))
+          assert parts, 'no parts'
+          data = ''.join(p.read_text().strip() for p in parts)
+          raw = base64.b64decode(data)
+          assert raw[:3] == b'\xff\xd8\xff', raw[:8]
+          Path('trouble-skill.jpg').write_bytes(raw)
+          print('wrote', len(raw), 'bytes from', len(parts), 'parts')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add trouble-skill.jpg
+          if git diff --cached --quiet; then
+            echo 'hero already present'
+            exit 0
+          fi
+          git commit -m "Add README hero image trouble-skill.jpg"
+          git push
