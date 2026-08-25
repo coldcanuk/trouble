@@ -15,7 +15,8 @@ skill-filesystem README, and the public example `7etsuo/write-legible-c`.
 ├── .github/plugin/marketplace.json     # Copilot CLI `plugin marketplace add`
 ├── .agents/plugins/marketplace.json    # Codex / .agents marketplace
 ├── plugins/trouble/
-│   ├── plugin.json                     # Grok / Claude / Copilot manifest
+│   ├── plugin.json                     # Grok / Copilot root manifest
+│   ├── .claude-plugin/plugin.json      # Claude Code plugin identity (required)
 │   ├── .codex-plugin/plugin.json       # Codex required plugin manifest
 │   └── skills/trouble/SKILL.md         # single source of protocol text
 ├── LICENSE                             # MIT
