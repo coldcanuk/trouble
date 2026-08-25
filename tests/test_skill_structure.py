@@ -172,10 +172,19 @@ class TestShippedSkill(unittest.TestCase):
         )
         self.assertIn("Do not\nlook for `.deepseek-plugin/marketplace.json`", readme)
 
-    def test_mit_license_present(self) -> None:
+    def test_gplv3_license_present(self) -> None:
         license_text = (ROOT / "LICENSE").read_text(encoding="utf-8")
-        self.assertIn("MIT License", license_text)
-        self.assertIn("Permission is hereby granted", license_text)
+        self.assertIn("GNU GENERAL PUBLIC LICENSE", license_text)
+        self.assertIn("Version 3, 29 June 2007", license_text)
+        grok_manifest = json.loads((PLUGIN_DIR / "plugin.json").read_text(encoding="utf-8"))
+        self.assertEqual(grok_manifest.get("license"), "GPL-3.0-or-later")
+        claude_manifest = json.loads(
+            (PLUGIN_DIR / ".claude-plugin" / "plugin.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(claude_manifest.get("license"), "GPL-3.0-or-later")
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertRegex(readme, r"GNU General Public License v3|GPLv3")
+        self.assertNotIn("MIT.", readme.split("## License")[-1] if "## License" in readme else "")
 
     def test_tracked_files_have_no_host_home_path(self) -> None:
         files = tracked_paths()
