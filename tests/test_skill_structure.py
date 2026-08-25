@@ -147,6 +147,10 @@ class TestShippedSkill(unittest.TestCase):
     def test_plugin_manifests_exist(self) -> None:
         grok_manifest = json.loads((PLUGIN_DIR / "plugin.json").read_text(encoding="utf-8"))
         self.assertEqual(grok_manifest["name"], "trouble")
+        claude_path = PLUGIN_DIR / ".claude-plugin" / "plugin.json"
+        self.assertTrue(claude_path.is_file(), "Claude Code requires plugins/trouble/.claude-plugin/plugin.json")
+        claude_manifest = json.loads(claude_path.read_text(encoding="utf-8"))
+        self.assertEqual(claude_manifest["name"], "trouble")
         codex_manifest = json.loads(
             (PLUGIN_DIR / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8")
         )
