@@ -171,6 +171,10 @@ class TestShippedSkill(unittest.TestCase):
             "README must say DeepSeek has no git marketplace catalog",
         )
         self.assertIn("Do not\nlook for `.deepseek-plugin/marketplace.json`", readme)
+        self.assertIn("trouble-skill.jpg", readme)
+        hero = ROOT / "trouble-skill.jpg"
+        self.assertTrue(hero.is_file(), "README hero image trouble-skill.jpg must be in the repo")
+        self.assertEqual(hero.read_bytes()[:3], b"\xff\xd8\xff")
 
     def test_gplv3_license_present(self) -> None:
         license_text = (ROOT / "LICENSE").read_text(encoding="utf-8")
