@@ -1,21 +1,38 @@
-# trouble
+# /trouble — four-minds debug protocol for stuck incidents
 
-Marketplace plugin that ships **`/trouble`** — a four-minds debug protocol for
-stuck incidents and “nothing I try is fixing this” bugs.
+**Stop guessing. Make the agent argue until the evidence wins.**
 
-The four personalities are **Data**, **Sherlock Holmes**, **Linus Torvalds**,
-and **Brian Cox**. They collect evidence, rank hypotheses with explicit Bayesian
-arithmetic, and must **unanimously agree** before a fix. Every run ends with a
-machine-parseable `TROUBLE_VERDICT_BEGIN` / `TROUBLE_VERDICT_END` block.
+`/trouble` is an open-source **AI agent skill** and **marketplace plugin** for
+hard debugging: production incidents, debug loops, and “nothing I try is
+fixing this” bugs. It installs on **Grok**, **Claude Code**, **GitHub Copilot
+CLI**, **OpenAI Codex**, and **DeepSeek Harness**.
 
-Modeled on [7etsuo/write-legible-c](https://github.com/7etsuo/write-legible-c):
-one plugin leaf, host-canonical marketplace catalogs, GitHub `owner/repo`
-install.
+Four personalities — **Data** (Star Trek), **Sherlock Holmes**, **Linus
+Torvalds**, and **Brian Cox** — collect verbatim evidence, rank hypotheses
+with explicit **Bayesian** arithmetic, and **will not apply a fix until they
+unanimously agree**. Every run ends with a machine-parseable
+`TROUBLE_VERDICT_BEGIN` / `TROUBLE_VERDICT_END` block that pipelines can gate
+on.
+
+If your coding agent patches first and thinks later, this is the protocol that
+slows it down on purpose.
+
+## Why people install it
+
+- **Root-cause analysis, not vibes.** Claims without a quoted log line, file,
+  or command output are tagged unverified and cannot support a fix.
+- **Incident response for agents.** Exit-code triage, MCP documentation
+  survey, smuggled-assumption hunt, timeline / causality check.
+- **A real agreement gate.** Data, Sherlock, Linus, and Brian Cox each vote
+  yes/no with a 0–10 confidence score before any code change.
+- **Host coverage.** One plugin leaf, GitHub `owner/repo` install — the same
+  shape as marketplace skills such as
+  [write-legible-c](https://github.com/7etsuo/write-legible-c).
 
 ## Install (recommended)
 
-Add this marketplace, then install the plugin. Replace nothing — the shorthand
-is `coldcanuk/trouble`.
+Add this marketplace, then install the plugin. The shorthand is
+`coldcanuk/trouble`.
 
 ### Grok
 
@@ -114,9 +131,9 @@ above. Restart the DSH session and invoke `/trouble`.
 
 - Slash command: `/trouble`
 - Skills menu: `/skills trouble`
-- Triggers: “troubleshoot”, “debug this”, “let's Bayesian this”, “bring in
-  Sherlock/Linus/Data/Brian”, “we need the four minds”, or a problem that has
-  already been worked on unsuccessfully
+- Triggers: “troubleshoot”, “debug this”, “root cause”, “incident response”,
+  “let's Bayesian this”, “bring in Sherlock/Linus/Data/Brian”, “we need the
+  four minds”, or a problem that has already been worked on unsuccessfully
 
 The agent must announce **Using the four-minds debug protocol** and follow the
 phases in `SKILL.md`.
@@ -163,4 +180,11 @@ python3 -m unittest discover -s tests -v
 
 ## License
 
-MIT.
+[GNU General Public License v3.0 or later](LICENSE) (GPLv3).
+
+Copyright (C) 2026 coldcanuk.
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
